@@ -3,16 +3,14 @@
     <div class="breadcrumb bg-color-1">
       <div class="breadcrumb-item active hb-dashboard">
         <span class="text-dark ml-2">
-          <strong>Features List</strong>
+          <strong>Features</strong>
         </span>
       </div>
     </div>
     <div class="container-fluid">
       <div class="row">
         <div class="col-auto">
-          <a href="/admin/dashboard/features/addnew" class="btn btn-primary"
-            >Add New</a
-          >
+          <a href="/admin/dashboard/features/addnew" class="btn btn-primary">Add New</a>
         </div>
       </div>
 
@@ -23,45 +21,38 @@
           <tr>
             <th>Title</th>
             <th>Description</th>
+            <th>Image</th>
             <th>Update</th>
             <th>Delete</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="features in featuresList" v-bind:key="features._id">
-            <td>{{ features.feature_tittle }}</td>
-            <td>{{ features.feature_description }}</td>
+          <tr v-for="features in featureList" :key="features.id">
+            <td>{{ features.title }}</td>
+            <td>{{ features.description }}</td>
             <td>
-              <!-- <a @click="updatetopic(features)">
-                        <i class="fa fa-pencil"></i>
-                    </a> -->
-
-              <button @click="updatetopic(features)">Update</button>
+              <img :src="features.image" style="height:100px;width:100px" />
             </td>
-
             <td>
-              <!-- <button data-toggle="modal" value="sdsd" class="delete" data-target="#myModal">
-                        <i class="fa fa-trash-o" aria-hidden="true"> </i>
-                    </button> -->
-
-              <button v-on:click="deletetopic(features._id)">Delete</button>
+              <a @click="updateservice(features)">
+                <i class="fa fa-pencil"></i>
+              </a>
             </td>
-
+            <td>
+              <button data-toggle="modal" value="sdsd" class="delete" data-target="#myModal">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+              </button>
+            </td>
             <div class="modal fade" id="myModal" role="dialog">
               <div class="modal-dialog">
-                <!-- Modal content-->
                 <div class="modal-content">
                   <div class="modal-header">
                     <h4 class="modal-title">Confirm Delete</h4>
-                    <button type="button" class="close" data-dismiss="modal">
-                      &times;
-                    </button>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
-                  <div class="modal-header">
-                    Are you sure you want to delete the entry?
-                  </div>
+                  <div class="modal-header">Are you sure you want to delete the entry?</div>
                   <div class="modal-footer">
-                    <a href="" class="btn btn-danger yes">yes</a>
+                    <a href class="btn btn-danger yes">yes</a>
                   </div>
                 </div>
               </div>
@@ -77,35 +68,37 @@ export default {
   layout: "admin",
 
   data: () => ({
-    featuresList: {},
+    featureList: [
+      {
+        id: 1,
+        title: "food delevery",
+        description: "Providing all necessary food item at users home",
+        image: "/uploads/assets/images/projectDefence.jpg",
+      },
+    ],
   }),
   mounted() {
-    this.$axios.$get("/api/users/getfeatures").then((res) => {
-      console.log(res, "res");
-      this.featuresList = res.data;
-    });
+    this.$axios
+      .$get("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => {
+        console.log(res, "res");
+        // this.topicList = res.data;
+      });
   },
 
-  methods: {
-    updatetopic(_id) {
-      this.$router.push({
-        path: "/admin/dashboard/features/getupdatedfeatures" + _id,
-      });
-    },
+  //   methods: {
+  //     updateservice(topic){
+  //        this.$router.push({
+  //     	   path:"/admin/dashboard/services/addtopic"+'7678676'
+  //        })
+  //     console.log(this.featureList);
 
-    //    updatetopic(_id){
-    //        this.$axios.put('api/users/getupdatedfeatures/' + _id).then((result) => {
-    //            console.log(result)
-    //            this.featuresList = result.data
-    //        })
-    //    },
-    deletetopic(_id) {
-      this.$axios.delete("api/users/deletefeatures/" + _id).then((result) => {
-        //   console.log(result)
-        this.featuresList = result.data;
-      });
-    },
-  },
+  //     }
+  //   }
 };
 </script>
-
+<style>
+body {
+  height: 100px !important;
+}
+</style>

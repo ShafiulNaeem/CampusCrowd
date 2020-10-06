@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-lg-4 col-md-5" v-for="service in services" :key="service.id">
-            <router-link :to="{ path: '/features/' + service.id }">
+            <router-link :to="{ path: '/'+service.type}">
                 <div class="single_feature" >
                     <div class="icon">
                     <span class="flaticon-student img_design">
@@ -13,6 +13,8 @@
                             <b>{{ service.title }}</b>
                         </h4>
                         <p class="cardpara">{{ service.serviceDiscription }}</p>
+
+<!--                        <a v-bind:href="'/food/'+ service.id">Continue</a>-->
                     </div>
                 </div>
             </router-link>
@@ -30,6 +32,7 @@
                 services: [
                     {
                         id: 1,
+                        type:"food",
                         img: require('../images/food.jpg'),
                         icon: "fas fa-utensils",
                         title: "Food Service",
@@ -39,6 +42,7 @@
 
                     {
                         id: 2,
+                        type:"doctor",
                         img: require('../images/doct.jpg'),
                         icon: "fas fa-truck",
                         title: "Doctor's Helpline",
@@ -47,6 +51,7 @@
                     },
                     {
                         id: 3,
+                        type:"course",
                         img: require('../images/short.jpg'),
                         icon: "fas fa-book-open",
                         title: "Online short Courses",
@@ -55,6 +60,7 @@
                     },
                     {
                         id: 4,
+                        type:"job",
                         img: require('../images/job.jpg'),
                         icon: "fas fa-book-open",
                         title: "Intern & Job Facilities",
@@ -63,6 +69,7 @@
                     },
                     {
                         id: 5,
+                        type:"home",
                         img: require('../images/hall.jpg'),
                         icon: "fas fa-book-open",
                         title: "Hall & Home Service",
@@ -71,6 +78,7 @@
                     },
                     {
                         id: 6,
+                        type:"stationary",
                         img: require('../images/stationary.jpg'),
                         icon: "fas fa-book-open",
                         title: "Photostat & Stationary",

@@ -62,19 +62,15 @@ export default {
 	}),
     methods:{
 		onsubmit(){
-			this.$axios.$post('/api/users/login', this.user).then(res=>{
-				console.log(res, 'res')
-				if(res.success == false){
-					this.show = res.message
-					setTimeout(() => {
-						this.show = false
-					}, 3000);
-        }
-        
-        else{
-          this.$router.push('/admin/dashboard')
-        }
-			})
+			// this.$axios.$post('/api/users/login', this.user).then(res=>{
+			// 	console.log(res, 'res')
+			// 	if(res.success == false){
+			// 		this.show = res.message
+			// 		setTimeout(() => {
+			// 			this.show = false
+			// 		}, 3000);
+			// 	}
+			// })
 		}
 	}
 }
@@ -96,3 +92,4 @@ body {
 	color: red;
 }
 </style>
+

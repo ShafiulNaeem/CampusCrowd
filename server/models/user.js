@@ -3,8 +3,8 @@ var Schema=mongoose.Schema;
 
 var userSchema=new Schema({
   email: { type:String, required:true, unique: true },
-  // password: { type:String},
-  role: { type:String },
+  password: { type:String, required:true },
+  role: { type:String, required:true },
   user_first_name: { type: String, lowercase: true},
   user_last_name: { type: String, lowercase: true},
   user_gender: { type: String },
@@ -12,7 +12,6 @@ var userSchema=new Schema({
   user_department: { type: String },
   image: { type:String },
   user_birth: { type: String },
-  user_name: { type: String, lowercase: true},
   user_address: { type: String },
   user_contract: { type: String },
   status: { type: Boolean },

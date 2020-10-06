@@ -47,10 +47,10 @@ export default {
 	},
 	data: () => ({
 		navlists: [
-			{
-				title: "",
-				link: "/"
-			},
+			// {
+			// 	title: "Home",
+			// 	link: "/home"
+			// },
 			{
 				title: 'Features',
 				link: '/features'
@@ -64,7 +64,7 @@ export default {
 				link: '/blog'
 			},
 			{
-				title: 'Library',
+				title: 'Confessions',
 				link: '/confess'
 			},
 			{

@@ -7,8 +7,6 @@
                 <uni_slider></uni_slider>
             </div>
 
-
-
             <!--                University Details Start-->
             <div class="col-md-12 select">
                 <h2 class="text-center text_size">
@@ -18,6 +16,9 @@
                     <div class="col-4">
                         <div class="list-group" id="list-tab" role="tablist">
                             <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Select University</a>
+                            <router-link :to="{ path: '/foreign_varsity'}">
+                                <a class="list-group-item list-group-item-action" id="#other_varsity" data-toggle="list" href="#" role="tab" aria-controls="home">Foreign University</a>
+                            </router-link>
                             <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" :href="'#'+university.title" role="tab" aria-controls="profile" v-for="(university,id) in universityDetails" :key="university.id">
                                 {{ university.title }}
                             </a>
@@ -51,11 +52,9 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
             </div>
             <!--                University Details end-->
         </div>

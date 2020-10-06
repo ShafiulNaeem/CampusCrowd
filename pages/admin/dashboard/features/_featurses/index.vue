@@ -66,24 +66,11 @@ export default {
     message: "",
   }),
   mounted() {
-    // this.$axios.$get('/api/users/getfeatures').then(res=>{
+    // this.$axios.$get('/api/action/getalltopic').then(res=>{
     // 	console.log(res, 'res')
-    // 	this.features = res.data;
-    // 	console.log(this.features, 'features')
+    // 	this.topicList = res.data;
+    // 	console.log(this.topicList, 'topl')
     // })
-    // this.$axios.$get('api/users/getfeatures').then(res => {
-    //   console.log(res, 'res')
-    //   this.features = res.data
-    //   console.log(this.features, 'features')
-
-    // })
-    // updateservice(topic){
-    //      this.$router.push({
-    //   	   path:"/admin/dashboard/services/addtopic"+'7678676'
-    //      })
-    //   console.log(this.featureList);
-
-    //   }
   },
   methods: {
     onsubmit() {

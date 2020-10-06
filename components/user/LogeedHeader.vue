@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div style="background-color: #3e515b">
 		<section class="headcontainera">
 			<nav class=" container navbar navbar-expand-lg navbar-dark bg-transparent">
 				<a class="navbar-brand" href="#">CC</a>
@@ -10,14 +10,14 @@
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active">
-							<a class="nav-link" href="/"><span class="navtext">Home</span></a>
+							<a class="nav-link" href="/"><span class="navtext text_change">Home</span></a>
 						</li>
 						<li class="nav-item" v-for="(item, i) in navlists" :key="i">
-							<a class="nav-link" :href="item.link" ><span class="navtext">{{item.title}}</span></a>
+							<a class="nav-link" :href="item.link" ><span class="navtext text_change">{{item.title}}</span></a>
 						</li>
 						<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            <span class="navtext">
+                            <span class="navtext text_change">
                                 <span class="img-br">
                                     <img src="/user/img/author2.png" alt="author" srcset="">
                                 </span>
@@ -25,8 +25,8 @@
                             </span>
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" id="navitem" href="#">Profile</a>
-                            <a class="dropdown-item" id="navitem" href="#">Logout</a>
+                            <a class="dropdown-item navtext" id="navitem1 " href="#">Profile</a>
+                            <a class="dropdown-item navtext" id="navitem" href="#">Logout</a>
                         </div>
                     </li>
 					</ul>
@@ -56,7 +56,7 @@
 							    <div class="row">
 									<div class="buttonholder">
 										<button type="button" @click="swap" class="primary-btnr mb-3 mb-sm-0">Register</button>
-										<button type="button" bmit.prevent="onsubmit" class="primary-btn2 mb-3 mb-sm-0" >Login</button>
+										<button type="button" class="primary-btn2 mb-3 mb-sm-0" >Login</button>
 									</div>
 								</div>
 							</div>
@@ -78,17 +78,13 @@ export default {
 
   data: () => ({
 	 navlists: [
-		//  {
-		// 	 title: 'Home',
-		// 	 link: '/'
-		//  },
 		 {
 			 title: 'Featurs',
 			 link: '/features'
 		 },
 		{
 
-			 title: 'Universitys',
+			 title: 'Universities',
 			 link: '/university'
 
 
@@ -112,48 +108,42 @@ export default {
 
   layout: "user",
   methods: {
-	//   onsubmit(){
-    //   this.$axios
-    //     .$post("http://localhost:3000", this.food)
-    //     .then((res) => {
-    //       if (res.success == true) {
-    //         this.message = res.message;
-    //       }
-    //     });
-    // },
   }
 };
 </script>
 
 
 <style>
-.dropdown:hover>.dropdown-menu {
-    display: block;
-  }
-  
-.dropdown>.dropdown-toggle:active {
-    pointer-events: none;
-}
-  .navbar-nav li{
-   margin-left: 8px!important;
-  }
-.navbar-nav li :hover{
-    transition-delay: 0.1s;
-    background-color:#002347;
-    border-radius: 20px;
-}
+	.dropdown:hover>.dropdown-menu {
+		display: block;
+	  }
 
-.navbar-nav li a :hover{
-    
-    color: #fdc632 !important;
-   
-}
-.img-br img{
-    height: 30px;
-    width: 30px;
-}
+	.dropdown>.dropdown-toggle:active {
+		pointer-events: none;
+	}
+	  .navbar-nav li{
+	   margin-left: 8px!important;
+	  }
+	.navbar-nav li :hover{
+		transition-delay: 0.1s;
+		background-color:#002347;
+		border-radius: 20px;
+	}
 
-#navitem :hover{
-color: #fdc632 !important;
-}
+	.navbar-nav li a :hover{
+
+		color: #fdc632 !important;
+
+	}
+	.img-br img{
+		height: 30px;
+		width: 30px;
+	}
+
+	#navitem :hover{
+	color: #fdc632 !important;
+	}
+	.text_change{
+		color: white !important;
+	}
 </style>

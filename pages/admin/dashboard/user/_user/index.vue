@@ -46,7 +46,7 @@
                       class="form-control"
                       id="exampleFormControlTextarea1"
                       rows="3"
-                      v-model="user.email"
+                      v-model="user.user_email"
                     ></textarea>
                   </div>
 
@@ -72,8 +72,8 @@ export default {
     user: {
       user_name: "",
       user_address: "",
-      email: "",
-      // image: "",
+      user_email: "",
+      image: "",
     },
     message: "",
   }),
@@ -87,7 +87,7 @@ export default {
   methods: {
     onsubmit() {
       this.$axios
-        .$post("http://localhost:3000/api/users/adduser", this.user)
+        .$post("http://localhost:3000/api/users/adduser", this.features)
         .then((res) => {
           console.log(res);
           if (res.success == true) {

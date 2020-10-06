@@ -7,14 +7,14 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active image_size">
-                <img src="../images/doct.jpg" class="d-block w-100" alt="...">
+                <img src="../images/food.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>First slide label</h5>
                     <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </div>
             </div>
             <div class="carousel-item image_size">
-                <img src="../images/food.jpg" class="d-block w-100" alt="...">
+                <img src="../images/doct.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Second slide label</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

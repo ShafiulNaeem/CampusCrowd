@@ -1,22 +1,17 @@
 <template>
     <div>
-        <div class="container">
+        <div class="container-fluid">
             <uni_slider></uni_slider>
         </div>
-        <section class="feature_area section_gap_top">
+        <section class="feature_area">
+            <!-- nav Start-->
+            <specific_varsity></specific_varsity>
+            <!-- nav end-->
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-5">
-                        <div class="main_title">
-                            <h2 class="mb-3">All essential services for your daily campus life</h2>
-                            <p class="pragraph">All essential services for your daily campus life</p>
-                        </div>
-                    </div>
-                </div>
                 <div class="row">
                     <!-- Services -->
                     <div class="col-lg-4 col-md-5" v-for="service in services" :key="service.id">
-                        <router-link :to="{ path: '/features/' + service.id  }">
+                        <router-link :to="{ path: '/features/id' }">
                             <div class="single_feature" >
                                 <div class="icon">
                                     <span class="flaticon-student img_design">
@@ -41,12 +36,17 @@
 </template>
 
 <script>
+    import specific_varsity from "./specific_varsity";
     import uni_slider from "./uni_slider";
     import CommonHeader from '~/components/user/CommonHeader'
     export default {
         layout: "userloged",
         props: ['university'],
-        components: { CommonHeader ,uni_slider},
+        components: {
+            specific_varsity,
+            CommonHeader,
+            uni_slider
+        },
         data(){
             return{
                 services: [
