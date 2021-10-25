@@ -5,7 +5,7 @@
         </div>
         <section class="feature_area">
             <!-- nav Start-->
-            <specific_varsity></specific_varsity>
+<!--            <specific_varsity></specific_varsity>-->
             <!-- nav end-->
             <div class="container">
                 <div class="row">
